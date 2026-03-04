@@ -1,0 +1,198 @@
+# ACTIVITY 1 - FIZZ BUZZ
+# Problem Statement: FIZZ BUZZ
+
+# Write a code in python in which you can get “Fizz Buzz” for all numbers which can be divided by (3, 5, 15). The range should from (1 to 100).
+
+# Questions:
+# - Which operator you will use in order to execute this code?
+
+
+for number in range(1, 100):
+    if number % 15 == 0: 
+        print("Fizz Buzz")
+    elif number % 3 == 0:
+        print("Fizz Buzz")
+    elif number % 5 == 0:
+        print("Fizz Buzz")     
+    else:
+        print(number)   
+
+# FIZZ BUZZ using while True and if statement
+
+while True:
+    number = int(input("give me a number :"))
+
+    if number % 15 == 0:
+        print("Fizz Buzz")
+    elif number % 3 == 0:
+        print("Fizz Buzz")
+    elif number % 5 == 0:
+        print("Fizz Buzz")
+    else:
+        print("this number cannot be divided")    
+
+
+# ACTIVITY 2 - SWAP CASES
+# Problem Statement:
+# How to swap all uppercase characters to lowercase and vice versa?
+
+# Questions:
+# - How the user will enter the character?
+# - How it will swap?
+# - Which commands will be used to convert each other?
+
+
+while True:
+    name = input("give me your name:")
+    print(name.swapcase())
+
+#or
+
+names = ["George", "John", "Zoe", "Irene"]
+
+for name in names:
+    print(name.swapcase()) 
+
+# or
+names = ["George", "John", "Zoe", "Irene"]
+
+swapped = [name.swapcase() for name in names]
+
+print(swapped)
+
+
+
+# ACTIVITY 3 - SWAP NUMBERS
+
+# Problem Statement:
+# Swap the numbers with and without the 3rd Variable.
+
+# Questions:
+# - How you will create and store the value in 3rd variable?
+# - How you will do it without the 3rd Variable?
+
+#with the 3d variable
+
+a = 5
+b = 10
+
+temp = a
+a = b
+b = temp
+
+print("a=",a)
+print("b=",b)
+
+# #without the 3rd variable
+
+a = 10
+b = 20
+
+a,b = b,a
+
+print("a=",a)
+print("b=",b)
+
+
+# ACTIVITY 4 - FIBONACCI SERIES
+# Problem Statement:
+# Write a code in python which will give you a Fibonacci series to a number when you enter it.
+
+# Questions:
+# - How you will you deal when a user inputs ‘0’?
+# - How the user will deal when a user inputs ‘1’?
+# - Which loops and statements do you use for the iterations?
+
+while True:
+    num = int(input("Give me a number:"))
+  
+    if num == 0:
+        print("No Fibonacci numbers for 0")
+    elif num == 1:
+        print("Fibonacci series:", [0])
+    else:
+        a, b = 0, 1
+        num_list = [a, b]    
+
+        for i in range(2, num):
+            a, b = b, a + b
+            num_list.append(b)
+
+        print("Fibonacci numbers:", num_list)
+
+
+
+# ACTIVITY 5 - GUESS NUMBER
+
+# Problem Statement:
+# Create a game in which user guesses a random number in python.
+
+# Questions:
+# - How will generate random number and how will you set the range?
+# - How to add attempts in your code, that user can have only 5 attempts to play?
+# - How will you subtract a attempt when user plays it one time?
+# - How will you show the ‘YOU WON!’ and ‘YOU LOST’ message?
+       
+
+import random
+
+secret_number = random.randint(1, 100)
+
+attempts = 5
+
+while attempts >0:
+    guess = int(input("give me a number:"))
+
+    if guess < secret_number:
+        print("the number is bigger!")
+    elif guess > secret_number:
+        print("the number is smaller")
+    else:
+        print("you won!! you found", secret_number)
+        break
+
+    attempts = attempts -1
+    if attempts > 0:
+        print(f"you have {attempts}, attemps left.")
+    else:
+        print(f"you lost!, the number was {secret_number}")
+
+
+        
+
+# ACTIVITY 6 - CALCULATOR 
+
+# Problem Statement:
+# Create a Basic Calculator that can do Addition, Subtraction, Multiplication and Division in Python.
+
+# Questions:
+# - How to create Choices for the user?
+# - How the user input two numbers?
+# - How can you add your define functions inside your If-else statements?
+# - How do stop the calculations at a certain part?
+# - How do you cope with this when a user will type a invalid input?
+
+while True:
+
+    number_a = float(input("give me the number a :"))
+    number_b = float(input("give me the number b :"))
+
+    calculation = input("put your calculation (+, - , * , /): ")
+
+    if calculation == "+":
+        print("result:", number_a + number_b )
+
+    elif calculation == "-":
+        print("result:", number_a - number_b)
+
+    elif calculation == "*":
+        print("result:", number_a * number_b)
+
+    elif calculation == "/":
+        if number_b != 0 :
+            print("result:", number_a / number_b)
+    else:
+        print("I can not do this calculation")
+
+else:
+    print("no calculation")         
